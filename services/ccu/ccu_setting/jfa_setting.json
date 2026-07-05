@@ -1,0 +1,96 @@
+{
+    "service_name": "JFA",
+    "version": "1.0.0",
+    "description": "JSON File Analyzer - Direct in-memory data processing",
+    "processing": {
+        "enabled": true,
+        "in_memory_processing": true,
+        "file_based_legacy": false,
+        "max_concurrent_analyses": 20,
+        "analysis_timeout": 120
+    },
+    "data_validation": {
+        "enabled": true,
+        "json_schema_validation": true,
+        "data_integrity_checks": true,
+        "format_validation": true,
+        "content_validation": true
+    },
+    "analysis_modules": {
+        "template_analyzer": {
+            "enabled": true,
+            "template_types": ["default"],
+            "validation_rules": true
+        },
+        "structure_analyzer": {
+            "enabled": true,
+            "deep_analysis": true,
+            "pattern_detection": true
+        },
+        "content_analyzer": {
+            "enabled": true,
+            "semantic_analysis": false,
+            "keyword_extraction": true
+        }
+    },
+    "output": {
+        "format": "json",
+        "include_metadata": true,
+        "compression": false,
+        "validation": true
+    },
+    "performance": {
+        "memory_limit": "256MB",
+        "processing_timeout": 120,
+        "batch_size": 10,
+        "parallel_processing": true
+    },
+    "integration": {
+        "rcm_integration": {
+            "enabled": true,
+            "direct_handoff": true,
+            "data_streaming": true
+        },
+        "td_integration": {
+            "enabled": true,
+            "calculation_support": true,
+            "template_forwarding": true
+        }
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "json",
+        "file_path": "logs/jfa.log",
+        "max_size": "100MB",
+        "backup_count": 5
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics_port": 9093,
+        "health_check_endpoint": "/health",
+        "metrics_endpoint": "/metrics"
+    },
+    "error_handling": {
+        "retry_attempts": 3,
+        "retry_delay": 2,
+        "fallback_enabled": true,
+        "error_recovery": true
+    },
+    "ccu_integration": {
+        "enabled": true,
+        "ccu_endpoint": "ws://localhost:8081/ccu",
+        "heartbeat_interval": 30,
+        "status_report_interval": 60
+    },
+    "ports": {
+        "api": 8083,
+        "health": 9094,
+        "websocket": 3334
+    },
+    "websocket_config": {
+        "connects_to_ccu_port": 4444,
+        "ccu_websocket_uri": "ws://localhost:4444/ws",
+        "connection_timeout": 5000,
+        "fallback_ports": [4454, 4464, 4474]
+    }
+}

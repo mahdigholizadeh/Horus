@@ -1,0 +1,84 @@
+{
+    "service_name": "RLA",
+    "version": "1.0.0",
+    "description": "Request Limit Analyzer - Primary Gateway and Ingress Controller",
+    "network": {
+        "listen_port": 3781,
+        "protocol": "HTTPS",
+        "host": "0.0.0.0",
+        "max_connections": 1000,
+        "connection_timeout": 30
+    },
+    "ssl_configuration": {
+        "enabled": true,
+        "certificate_source": "ccu_managed",
+        "local_cert_path": "certs/cert.pem",
+        "local_key_path": "certs/key.pem",
+        "cert_content": "",
+        "key_content": "",
+        "auto_reload": true,
+        "verification_mode": "optional",
+        "supported_protocols": ["TLSv1.2", "TLSv1.3"]
+    },
+    "limits": {
+        "max_words": 3000,
+        "max_tokens": 5000,
+        "max_request_size": "10MB",
+        "rate_limit": {
+            "requests_per_minute": 100,
+            "requests_per_hour": 1000,
+            "burst_size": 20
+        }
+    },
+    "validation": {
+        "enabled": true,
+        "json_schema_validation": true,
+        "content_filtering": true,
+        "spam_detection": true,
+        "malware_scanning": false
+    },
+    "security": {
+        "enable_cors": true,
+        "cors_origins": ["*"],
+        "enable_rate_limiting": true,
+        "ddos_protection": true,
+        "ip_whitelist": [],
+        "ip_blacklist": []
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "json",
+        "file_path": "logs/rla.log",
+        "max_size": "100MB",
+        "backup_count": 5
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics_port": 9090,
+        "health_check_endpoint": "/health",
+        "metrics_endpoint": "/metrics"
+    },
+    "error_handling": {
+        "retry_attempts": 3,
+        "retry_delay": 1,
+        "circuit_breaker": true,
+        "fallback_enabled": true
+    },
+    "ccu_integration": {
+        "enabled": true,
+        "ccu_endpoint": "ws://localhost:8081/ccu",
+        "heartbeat_interval": 30,
+        "status_report_interval": 60
+    },
+    "ports": {
+        "api": 8081,
+        "health": 9091,
+        "websocket": 3331
+    },
+    "websocket_config": {
+        "connects_to_ccu_port": 4441,
+        "ccu_websocket_uri": "ws://localhost:4441/ws",
+        "connection_timeout": 5000,
+        "fallback_ports": [4451, 4461, 4471]
+    }
+} 

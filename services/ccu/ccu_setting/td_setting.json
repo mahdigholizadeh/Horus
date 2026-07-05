@@ -1,0 +1,64 @@
+{
+    "service_name": "TD",
+    "version": "1.0.0",
+    "description": "Task Divider — request routing and orchestration proxy",
+    "processing": {
+        "enabled": true,
+        "binary_data_support": true,
+        "max_concurrent_routes": 12,
+        "route_timeout": 300
+    },
+    "routing": {
+        "enabled": true,
+        "default_route": "forward",
+        "supported_routes": ["forward", "parallel", "sequential"],
+        "max_concurrent_orchestrations": 5
+    },
+    "data_processing": {
+        "binary_format_support": true,
+        "json_passthrough": true,
+        "data_validation": true
+    },
+    "output": {
+        "format": "json",
+        "include_metadata": true,
+        "validation": true
+    },
+    "performance": {
+        "memory_limit": "512MB",
+        "processing_timeout": 300,
+        "parallel_routing": true
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "json",
+        "file_path": "logs/td.log",
+        "max_size": "100MB",
+        "backup_count": 5
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics_port": 9094,
+        "health_check_endpoint": "/health",
+        "metrics_endpoint": "/metrics"
+    },
+    "error_handling": {
+        "retry_attempts": 3,
+        "retry_delay": 5,
+        "fallback_enabled": true
+    },
+    "ccu_integration": {
+        "enabled": true,
+        "heartbeat_interval": 30,
+        "status_report_interval": 60
+    },
+    "ports": {
+        "api": 8003,
+        "health": 9093,
+        "websocket": 11492
+    },
+    "websocket_config": {
+        "connects_to_ccu_port": 4445,
+        "connection_timeout": 5000
+    }
+}

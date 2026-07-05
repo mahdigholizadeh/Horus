@@ -1,0 +1,127 @@
+{
+    "service_name": "RCM",
+    "version": "1.0.0",
+    "description": "Request Cache Manager - Core AI/ML processing pipeline",
+    "api_configuration": {
+        "openai": {
+            "api_key": "${OPENAI_API_KEY}",
+            "base_url": "https://api.openai.com/v1",
+            "timeout": 30,
+            "max_retries": 3
+        },
+        "special_api": {
+            "api_key": "${SPECIAL_API_KEY}",
+            "comment": "Optional: For custom trained models"
+        },
+        "agent_api": {
+            "api_key": "${AGENT_API_KEY}",
+            "comment": "Optional: Separate key for agent interactions, falls back to main key"
+        },
+        "models": {
+            "basic_model": "gpt-4.1-nano",
+            "agent_model": "gpt-4",
+            "special_model": "gpt-3.5-turbo",
+            "default_agent_id": "asst_lQCwiQAJcycDj7YqHBafyWtT"
+        },
+        "security_note": "API keys are distributed by CCU via RCMIM→ECM for security. Set environment variables: OPENAI_API_KEY, SPECIAL_API_KEY (optional), AGENT_API_KEY (optional)"
+    },
+    "processing": {
+        "priority_queues": {
+            "A": {
+                "max_size": 100,
+                "processing_timeout": 30,
+                "priority_level": 1
+            },
+            "B": {
+                "max_size": 200,
+                "processing_timeout": 60,
+                "priority_level": 2
+            },
+            "C": {
+                "max_size": 500,
+                "processing_timeout": 120,
+                "priority_level": 3
+            },
+            "D": {
+                "max_size": 1000,
+                "processing_timeout": 300,
+                "priority_level": 4
+            }
+        },
+        "max_concurrent_requests": 10,
+        "request_timeout": 300,
+        "retry_attempts": 3
+    },
+    "memory_management": {
+        "memory_threshold": 40.0,
+        "spill_threshold": 35.0,
+        "restore_threshold": 30.0,
+        "disk_spill_location": "cache/spill/",
+        "max_spill_size": "1GB"
+    },
+    "rate_limiting": {
+        "requests_per_minute": 60,
+        "requests_per_second": 1,
+        "adaptive_switching": true,
+        "burst_allowance": 5
+    },
+    "database": {
+        "type": "sqlite",
+        "path": "rcm_database.db",
+        "backup_interval": 3600,
+        "max_backups": 24
+    },
+    "directories": {
+        "input": "input/",
+        "output": "output/",
+        "cache": "cache/",
+        "logs": "logs/",
+        "temp": "temp/",
+        "error": "error/"
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics_port": 9092,
+        "health_check_endpoint": "/health",
+        "metrics_endpoint": "/metrics",
+        "token_tracking": true
+    },
+    "error_handling": {
+        "error_code_format": "16_char_hex",
+        "server_code": "01",
+        "macroservice_code": "01",
+        "microservice_code": "03",
+        "auto_recovery": true,
+        "error_retention_days": 30
+    },
+    "modules": {
+        "GIDVM": {"enabled": true, "validation": true},
+        "PBRPM": {"enabled": true, "queue_monitoring": true},
+        "AACM": {"enabled": true, "async_processing": true},
+        "BAAIM": {"enabled": true, "model_override": true},
+        "AAAIM": {"enabled": true, "agent_override": true},
+        "SAAIM": {"enabled": true, "special_api_support": true},
+        "IFCM": {"enabled": true, "workflow_orchestration": true},
+        "ECM": {"enabled": true, "ccu_integration": true},
+        "EMM": {"enabled": true, "centralized_errors": true},
+        "TMM": {"enabled": true, "comprehensive_testing": true}
+    },
+    "ccu_integration": {
+        "enabled": true,
+        "ccu_endpoint": "ws://localhost:8081/ccu",
+        "heartbeat_interval": 30,
+        "status_report_interval": 60,
+        "log_streaming": true
+    },
+    "ports": {
+        "api": 8080,
+        "health": 9092,
+        "websocket": 3333
+    },
+    "websocket_config": {
+        "connects_to_ccu_port": 4443,
+        "ccu_websocket_uri": "ws://localhost:4443/ws",
+        "connection_timeout": 5000,
+        "fallback_ports": [4453, 4463, 4473]
+    }
+} 

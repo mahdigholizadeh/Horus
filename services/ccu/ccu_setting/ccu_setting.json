@@ -1,0 +1,173 @@
+{
+    "service_name": "CCU",
+    "version": "1.0.0",
+    "description": "Central Control Unit - Main orchestrator for all microservices",
+    "core_settings": {
+        "max_concurrent_requests": 10,
+        "request_timeout": 300,
+        "retry_attempts": 3,
+        "backpressure_threshold": {
+            "cpu_usage": 90,
+            "memory_usage": 90
+        },
+        "monitoring_interval": 30,
+        "backup_interval": 3600,
+        "log_level": "INFO"
+    },
+    "certificate_management": {
+        "enabled": true,
+        "certificate_store_path": "certificates/",
+        "default_cert_path": "certificates/server.crt",
+        "default_key_path": "certificates/server.key",
+        "ca_cert_path": "certificates/ca.crt",
+        "auto_distribute": true,
+        "certificate_sources": {
+            "development": {
+                "cert_path": "certificates/dev/cert.pem",
+                "key_path": "certificates/dev/key.pem",
+                "description": "Development localhost certificates"
+            },
+            "production": {
+                "cert_path": "certificates/prod/cert.pem",
+                "key_path": "certificates/prod/key.pem",
+                "description": "Production Ubuntu 24 certificates"
+            },
+            "staging": {
+                "cert_path": "certificates/staging/cert.pem", 
+                "key_path": "certificates/staging/key.pem",
+                "description": "Staging environment certificates"
+            }
+        },
+        "active_environment": "development",
+        "certificate_validation": {
+            "verify_expiry": true,
+            "expiry_warning_days": 30,
+            "auto_renewal": false
+        },
+        "distribution_settings": {
+            "services": ["RLA", "TPP", "RCM", "JFA", "TD", "OCM"],
+            "push_on_change": true,
+            "retry_attempts": 3,
+            "timeout_seconds": 30
+        }
+    },
+    "graphical_monitoring": {
+        "enabled": true,
+        "port": 11489,
+        "host": "0.0.0.0",
+        "refresh_interval": 5,
+        "dashboard_title": "CCU System Dashboard"
+    },
+    "database": {
+        "type": "sqlite",
+        "path": "ccu_database.db",
+        "backup_location": "backups/",
+        "backup_retention_days": 30
+    },
+    "network": {
+        "http_port": 8080,
+        "websocket_port": 8081,
+        "max_connections": 100,
+        "connection_timeout": 30
+    },
+    "ports": {
+        "api": 8070,
+        "health": 9090,
+        "admin": 9070
+    },
+    "websocket_servers": {
+        "RLAIM": 4441,
+        "TPPIM": 4442,
+        "RCMIM": 4443,
+        "JFAIM": 4444,
+        "TDIM": 4445,
+        "OCMIM": 4446
+    },
+    "security": {
+        "enable_hmac": true,
+        "hmac_secret_key": "your-secret-key-here",
+        "enable_ssl": true,
+        "ssl_cert_path": "certificates/server.crt",
+        "ssl_key_path": "certificates/server.key",
+        "client_cert_required": false,
+        "supported_tls_versions": ["TLSv1.2", "TLSv1.3"]
+    },
+    "request_id_format": {
+        "prefix": "wsrid_0x",
+        "length": 12,
+        "format": "hex"
+    },
+    "modules": {
+        "RTM": {
+            "enabled": true,
+            "max_tracked_requests": 1000,
+            "cleanup_interval": 300
+        },
+        "MSMM": {
+            "enabled": true,
+            "health_check_interval": 30,
+            "restart_threshold": 3,
+            "recovery_timeout": 60
+        },
+        "SRMM": {
+            "enabled": true,
+            "monitoring_interval": 10,
+            "alert_thresholds": {
+                "cpu_warning": 70,
+                "cpu_critical": 90,
+                "memory_warning": 70,
+                "memory_critical": 90,
+                "disk_warning": 80,
+                "disk_critical": 95
+            }
+        },
+        "CEIM": {
+            "enabled": true,
+            "error_retention_days": 30,
+            "investigation_timeout": 120,
+            "auto_recovery": true
+        },
+        "CMM": {
+            "enabled": true,
+            "log_aggregation": true,
+            "real_time_streaming": true,
+            "buffer_size": 1000
+        },
+        "GMM": {
+            "enabled": true,
+            "dashboard_port": 11489,
+            "update_interval": 5,
+            "max_data_points": 1000
+        },
+        "SMM": {
+            "enabled": true,
+            "auto_backup_config": true,
+            "validation_enabled": true,
+            "rollback_enabled": true,
+            "certificate_management": true
+        },
+        "DBM": {
+            "enabled": true,
+            "backup_interval": 3600,
+            "max_backups": 24,
+            "compression": true
+        },
+        "IMSMM": {
+            "enabled": true,
+            "health_check_interval": 60,
+            "self_healing": true
+        },
+        "CTMM": {
+            "enabled": true,
+            "test_suite_path": "tests/",
+            "auto_test_on_startup": true,
+            "test_timeout": 300
+        },
+        "NMM": {
+            "enabled": true,
+            "network_check_interval": 60,
+            "connectivity_tests": true,
+            "bandwidth_monitoring": false
+        }
+    }
+} 

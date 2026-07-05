@@ -1,0 +1,90 @@
+{
+    "service_name": "TPP",
+    "version": "1.0.0",
+    "description": "Text Preprocessing - Stateless transformation service for text filtering",
+    "processing": {
+        "enabled": true,
+        "preserve_word_order": true,
+        "case_sensitive": false,
+        "unicode_support": true,
+        "max_text_length": 50000
+    },
+    "spam_filtering": {
+        "enabled": true,
+        "spam_word_list": [
+            "spam",
+            "scam",
+            "phishing",
+            "malware",
+            "virus"
+        ],
+        "custom_filters": {
+            "profanity_filter": true,
+            "url_filter": true,
+            "email_filter": false,
+            "phone_filter": false
+        },
+        "replacement_strategy": "remove"
+    },
+    "nlp_features": {
+        "enabled": true,
+        "normalization": true,
+        "stop_word_removal": false,
+        "lemmatization": false,
+        "stemming": false,
+        "language_detection": true,
+        "supported_languages": ["en", "es", "fr", "de", "it"]
+    },
+    "performance": {
+        "batch_processing": false,
+        "max_concurrent_requests": 50,
+        "processing_timeout": 30,
+        "memory_limit": "512MB"
+    },
+    "input": {
+        "format": "json",
+        "required_fields": ["text", "request_id"],
+        "validation": true
+    },
+    "output": {
+        "format": "json",
+        "include_metadata": true,
+        "compression": false
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "json",
+        "file_path": "logs/tpp.log",
+        "max_size": "100MB",
+        "backup_count": 5
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics_port": 9091,
+        "health_check_endpoint": "/health",
+        "metrics_endpoint": "/metrics"
+    },
+    "error_handling": {
+        "retry_attempts": 3,
+        "retry_delay": 1,
+        "fallback_enabled": true,
+        "error_recovery": true
+    },
+    "ccu_integration": {
+        "enabled": true,
+        "ccu_endpoint": "ws://localhost:8081/ccu",
+        "heartbeat_interval": 30,
+        "status_report_interval": 60
+    },
+    "ports": {
+        "api": 8082,
+        "health": 9093,
+        "websocket": 3332
+    },
+    "websocket_config": {
+        "connects_to_ccu_port": 4442,
+        "ccu_websocket_uri": "ws://localhost:4442/ws",
+        "connection_timeout": 5000,
+        "fallback_ports": [4452, 4462, 4472]
+    }
+}

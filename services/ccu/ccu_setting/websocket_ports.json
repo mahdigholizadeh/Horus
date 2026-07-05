@@ -1,0 +1,120 @@
+{
+    "description": "WebSocket port configuration for CCU-Microservice communication",
+    "version": "1.0.0",
+    "architecture": "6_websocket_servers_in_ccu",
+    "port_fallback_logic": {
+        "enabled": true,
+        "fallback_increment": 10,
+        "connection_timeout_ms": 5000,
+        "max_fallback_attempts": 3,
+        "description": "If primary port is busy, try port+10, then port+20, then port+30"
+    },
+    "ccu_websocket_servers": {
+        "description": "CCU runs 6 WebSocket servers, one for each interaction module",
+        "RLAIM": {
+            "primary_port": 4441,
+            "fallback_ports": [4451, 4461, 4471],
+            "description": "RLA ECM connects to this CCU WebSocket server"
+        },
+        "TPPIM": {
+            "primary_port": 4442,
+            "fallback_ports": [4452, 4462, 4472],
+            "description": "TPP ECM connects to this CCU WebSocket server"
+        },
+        "RCMIM": {
+            "primary_port": 4443,
+            "fallback_ports": [4453, 4463, 4473],
+            "description": "RCM ECM connects to this CCU WebSocket server"
+        },
+        "JFAIM": {
+            "primary_port": 4444,
+            "fallback_ports": [4454, 4464, 4474],
+            "description": "JFA ECM connects to this CCU WebSocket server"
+        },
+        "TDIM": {
+            "primary_port": 4445,
+            "fallback_ports": [4455, 4465, 4475],
+            "description": "TD ECM connects to this CCU WebSocket server"
+        },
+        "OCMIM": {
+            "primary_port": 4446,
+            "fallback_ports": [4456, 4466, 4476],
+            "description": "OCM ECM connects to this CCU WebSocket server"
+        }
+    },
+    "microservice_ecm_clients": {
+        "description": "Microservice ECM modules connect AS CLIENTS to CCU WebSocket servers",
+        "RLA": {
+            "connects_to_ccu_port": 4441,
+            "local_binding_port": 3331,
+            "fallback_ports": [3341, 3351, 3361],
+            "description": "RLA ECM connects to CCU RLAIM WebSocket server"
+        },
+        "TPP": {
+            "connects_to_ccu_port": 4442,
+            "local_binding_port": 3332,
+            "fallback_ports": [3342, 3352, 3362],
+            "description": "TPP ECM connects to CCU TPPIM WebSocket server"
+        },
+        "RCM": {
+            "connects_to_ccu_port": 4443,  
+            "local_binding_port": 3333,
+            "fallback_ports": [3343, 3353, 3363],
+            "description": "RCM ECM connects to CCU RCMIM WebSocket server"
+        },
+        "JFA": {
+            "connects_to_ccu_port": 4444,
+            "local_binding_port": 3334,
+            "fallback_ports": [3344, 3354, 3364],
+            "description": "JFA ECM connects to CCU JFAIM WebSocket server"
+        },
+        "TD": {
+            "connects_to_ccu_port": 4445,
+            "local_binding_port": 3335,
+            "fallback_ports": [3345, 3355, 3365],
+            "description": "TD ECM connects to CCU TDIM WebSocket server"
+        },
+        "OCM": {
+            "connects_to_ccu_port": 4446,
+            "local_binding_port": 3336,
+            "fallback_ports": [3346, 3356, 3366],
+            "description": "OCM ECM connects to CCU OCMIM WebSocket server"
+        }
+    },
+    "connection_flow": {
+        "step_1": "CCU starts and launches 6 WebSocket servers (RLAIM:4441, TPPIM:4442, etc.)",
+        "step_2": "Microservices start and their ECM modules connect to respective CCU WebSocket servers",
+        "step_3": "If primary port busy, ECM waits 5000ms then tries primary_port + 10",
+        "step_4": "CCU sends activation commands via established WebSocket connections",
+        "step_5": "Microservices activate their gateways and become operational"
+    },
+    "startup_sequence": {
+        "phase_1": {
+            "description": "CCU WebSocket Server Startup",
+            "actions": [
+                "Check port availability for all 6 CCU WebSocket servers",
+                "Apply port fallback logic if needed (+10, +20, +30)",
+                "Start all 6 WebSocket servers",
+                "Log actual ports used for each server"
+            ]
+        },
+        "phase_2": {
+            "description": "Microservice ECM Connection",
+            "actions": [
+                "Start all microservices in parallel",
+                "ECM modules attempt connection to CCU WebSocket servers",
+                "Apply ECM connection fallback logic (5000ms timeout, then +10 port)",
+                "Report connection status to CCU"
+            ]
+        },
+        "phase_3": {
+            "description": "Two-Phase Activation",
+            "actions": [
+                "CCU waits for all 6 microservices to connect",
+                "CCU sends activation commands via WebSocket",
+                "Microservices activate gateways and report ready",
+                "System operational"
+            ]
+        }
+    }
+}
