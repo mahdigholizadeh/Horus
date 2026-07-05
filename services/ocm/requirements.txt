@@ -1,0 +1,30 @@
+# OCM Microservice Dependencies
+
+# Core dependencies
+asyncio
+aiohttp
+websockets
+psutil
+
+# PDF Generation Engines
+weasyprint>=66.0
+reportlab>=4.4.0
+
+# System Dependencies (must be installed separately)
+# ================================================
+
+# Linux Servers: Install GTK+ runtime for WeasyPrint
+# sudo apt-get install libgobject-2.0-0
+
+# Production: Chrome/Chromium can be installed for additional PDF capabilities
+# - Windows: Download from https://www.google.com/chrome/
+# - Linux: sudo apt-get install chromium-browser
+# - macOS: brew install chromium
+
+# Additional dependencies for PDF generation
+Pillow>=9.1.0
+fonttools>=4.0.0
+
+# For testing
+pytest
+pytest-asyncio 

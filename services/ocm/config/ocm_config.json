@@ -1,0 +1,93 @@
+{
+  "service_name": "OCM",
+  "version": "1.0.0",
+  "description": "Output Cache Management - Final output processing and delivery",
+  "network": {
+    "output_port": 47812,
+    "protocol": "HTTPS",
+    "host": "0.0.0.0",
+    "max_connections": 500,
+    "connection_timeout": 30,
+    "retry_attempts": 3,
+    "retry_delay": 2
+  },
+  "ssl_configuration": {
+    "enabled": true,
+    "certificate_source": "ccu_managed",
+    "local_cert_path": "certs/cert.pem",
+    "local_key_path": "certs/key.pem",
+    "cert_content": "",
+    "key_content": "",
+    "auto_reload": true,
+    "verification_mode": "required",
+    "supported_protocols": ["TLSv1.2", "TLSv1.3"]
+  },
+  "priority_management": {
+    "enabled": true,
+    "levels": ["A", "B", "C", "D"],
+    "default_priority": "C",
+    "bandwidth_allocation": {
+      "A": 40,
+      "B": 30,
+      "C": 20,
+      "D": 10
+    }
+  },
+  "acknowledgment_protocol": {
+    "enabled": true,
+    "timeout_seconds": 30,
+    "max_retries": 3,
+    "checksum_validation": true,
+    "integrity_checks": true
+  },
+  "report_generation": {
+    "default_template": "templates/default_template.html",
+    "output_formats": ["HTML", "PDF"],
+    "pdf_settings": {
+      "page_size": "A4",
+      "orientation": "portrait",
+      "margins": {"top": 20, "bottom": 20, "left": 20, "right": 20}
+    }
+  },
+  "database": {
+    "type": "sqlite",
+    "path": "databases/ocm.db",
+    "priority_partitions": true,
+    "backup_enabled": true,
+    "backup_interval": 3600
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "json",
+    "file_path": "logs/ocm.log",
+    "max_size": "100MB",
+    "backup_count": 5
+  },
+  "monitoring": {
+    "enabled": true,
+    "metrics_port": 9091,
+    "health_check_endpoint": "/health",
+    "metrics_endpoint": "/metrics"
+  },
+  "ccu_integration": {
+    "enabled": true,
+    "ccu_host": "localhost",
+    "ccu_port": 8080,
+    "heartbeat_interval": 30,
+    "reconnect_attempts": 5
+  },
+  "error_management": {
+    "escalation_threshold": 5,
+    "critical_error_notify_immediately": true,
+    "max_error_history": 10000
+  },
+  "td_integration": {
+    "max_data_size": 104857600,
+    "validation_timeout": 30,
+    "processing_timeout": 600
+  },
+  "rcm_integration": {
+    "max_response_size": 10485760,
+    "immediate_delivery_threshold": 5
+  }
+} 

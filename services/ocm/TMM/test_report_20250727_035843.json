@@ -1,0 +1,153 @@
+{
+  "test_suite": "OCM Microservice Test Suite",
+  "timestamp": "2025-07-27T03:58:43.374425",
+  "total_execution_time": 4.946276426315308,
+  "summary": {
+    "total_tests_run": 5,
+    "passed_tests": 0,
+    "failed_tests": 5,
+    "error_tests": 0,
+    "total_individual_tests": 190,
+    "total_individual_passed": 147,
+    "total_individual_failed": 43,
+    "overall_success_rate": 77.36842105263158
+  },
+  "test_results": [
+    {
+      "test_code": "O00000001",
+      "test_name": "OCM Main Service Initialization",
+      "status": "FAILED",
+      "total_tests": 65,
+      "passed_tests": 49,
+      "failed_tests": 16,
+      "success_rate": 75.38461538461539,
+      "details": {
+        "modules_initialized": [
+          "ECM",
+          "NMM",
+          "RMM",
+          "BTM",
+          "FAIM",
+          "MSM",
+          "DCM",
+          "HRPM",
+          "PRFPM",
+          "OCVM",
+          "DSM",
+          "TDIM",
+          "RCMIM",
+          "EMM",
+          "TMM"
+        ],
+        "modules_expected": [
+          "ECM",
+          "NMM",
+          "RMM",
+          "BTM",
+          "FAIM",
+          "MSM",
+          "DCM",
+          "HRPM",
+          "PRFPM",
+          "OCVM",
+          "DSM",
+          "TDIM",
+          "RCMIM",
+          "EMM",
+          "TMM"
+        ],
+        "modules_missing": [],
+        "service_info_valid": true,
+        "network_config_valid": true,
+        "ssl_config_valid": true,
+        "priority_config_valid": true
+      },
+      "timestamp": 139852.8854392,
+      "execution_time": 0.8038015365600586
+    },
+    {
+      "test_code": "O00000002",
+      "test_name": "OCM Main Service Shutdown",
+      "status": "FAILED",
+      "total_tests": 25,
+      "passed_tests": 23,
+      "failed_tests": 2,
+      "success_rate": 92.0,
+      "details": {
+        "shutdown_time_seconds": 2.939239740371704,
+        "active_reports_handled": 0,
+        "background_tasks_stopped": 0,
+        "network_connections_closed": true,
+        "memory_usage_mb": 85.015625,
+        "child_processes": 0,
+        "temp_files_cleaned": false,
+        "cache_files_cleaned": false
+      },
+      "timestamp": 139856.0047833,
+      "execution_time": 3.1195485591888428
+    },
+    {
+      "test_code": "O00000003",
+      "test_name": "OCM Main Configuration Management",
+      "status": "FAILED",
+      "total_tests": 38,
+      "passed_tests": 36,
+      "failed_tests": 2,
+      "success_rate": 94.73684210526315,
+      "details": {
+        "config_validation": true,
+        "config_updates": true,
+        "service_status": true,
+        "ssl_config_updates": true,
+        "default_config_loading": true,
+        "invalid_config_rejection": true
+      },
+      "timestamp": 139856.0135954,
+      "execution_time": 0.007976770401000977
+    },
+    {
+      "test_code": "O00000004",
+      "test_name": "ECM CCU WebSocket Connection",
+      "status": "FAILED",
+      "total_tests": 34,
+      "passed_tests": 18,
+      "failed_tests": 16,
+      "success_rate": 52.94117647058824,
+      "details": {
+        "connection_established": false,
+        "messages_sent": 0,
+        "connections_handled": 0,
+        "registration_successful": false,
+        "heartbeat_successful": false,
+        "reconnection_tested": true,
+        "error_handling_tested": true
+      },
+      "timestamp": 139857.024376,
+      "execution_time": 1.011000394821167
+    },
+    {
+      "test_code": "O00000005",
+      "test_name": "ECM Service Registration",
+      "status": "FAILED",
+      "total_tests": 28,
+      "passed_tests": 21,
+      "failed_tests": 7,
+      "success_rate": 75.0,
+      "details": {
+        "module_initialized": true,
+        "basic_methods_available": true,
+        "status_method_works": true,
+        "health_check_works": true,
+        "start_stop_tested": true,
+        "message_sending_tested": false
+      },
+      "timestamp": 139857.0276369,
+      "execution_time": 0.0018069744110107422
+    }
+  ],
+  "recommendations": [
+    "Good test results with some areas for improvement.",
+    "Focus on fixing the failed tests to improve reliability.",
+    "Improve WebSocket connection reliability in ECM module."
+  ]
+}

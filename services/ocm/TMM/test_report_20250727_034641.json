@@ -1,0 +1,146 @@
+{
+  "test_suite": "OCM Microservice Test Suite",
+  "timestamp": "2025-07-27T03:46:41.829393",
+  "total_execution_time": 3.811333179473877,
+  "summary": {
+    "total_tests_run": 5,
+    "passed_tests": 0,
+    "failed_tests": 4,
+    "error_tests": 1,
+    "total_individual_tests": 165,
+    "total_individual_passed": 124,
+    "total_individual_failed": 41,
+    "overall_success_rate": 75.15151515151514
+  },
+  "test_results": [
+    {
+      "test_code": "O00000001",
+      "test_name": "OCM Main Service Initialization",
+      "status": "FAILED",
+      "total_tests": 65,
+      "passed_tests": 49,
+      "failed_tests": 16,
+      "success_rate": 75.38461538461539,
+      "details": {
+        "modules_initialized": [
+          "ECM",
+          "NMM",
+          "RMM",
+          "BTM",
+          "FAIM",
+          "MSM",
+          "DCM",
+          "HRPM",
+          "PRFPM",
+          "OCVM",
+          "DSM",
+          "TDIM",
+          "RCMIM",
+          "EMM",
+          "TMM"
+        ],
+        "modules_expected": [
+          "ECM",
+          "NMM",
+          "RMM",
+          "BTM",
+          "FAIM",
+          "MSM",
+          "DCM",
+          "HRPM",
+          "PRFPM",
+          "OCVM",
+          "DSM",
+          "TDIM",
+          "RCMIM",
+          "EMM",
+          "TMM"
+        ],
+        "modules_missing": [],
+        "service_info_valid": true,
+        "network_config_valid": true,
+        "ssl_config_valid": true,
+        "priority_config_valid": true
+      },
+      "timestamp": 139132.3023048,
+      "execution_time": 0.6307327747344971
+    },
+    {
+      "test_code": "O00000002",
+      "test_name": "OCM Main Service Shutdown",
+      "status": "ERROR",
+      "error": "Test execution error: No PDF generation engines available",
+      "details": {
+        "error_type": "RuntimeError",
+        "message": "No PDF generation engines available"
+      },
+      "timestamp": 139134.4677584,
+      "execution_time": 2.164994955062866
+    },
+    {
+      "test_code": "O00000003",
+      "test_name": "OCM Main Configuration Management",
+      "status": "FAILED",
+      "total_tests": 38,
+      "passed_tests": 36,
+      "failed_tests": 2,
+      "success_rate": 94.73684210526315,
+      "details": {
+        "config_validation": true,
+        "config_updates": true,
+        "service_status": true,
+        "ssl_config_updates": true,
+        "default_config_loading": true,
+        "invalid_config_rejection": true
+      },
+      "timestamp": 139134.4758819,
+      "execution_time": 0.00786900520324707
+    },
+    {
+      "test_code": "O00000004",
+      "test_name": "ECM CCU WebSocket Connection",
+      "status": "FAILED",
+      "total_tests": 34,
+      "passed_tests": 18,
+      "failed_tests": 16,
+      "success_rate": 52.94117647058824,
+      "details": {
+        "connection_established": false,
+        "messages_sent": 0,
+        "connections_handled": 0,
+        "registration_successful": false,
+        "heartbeat_successful": false,
+        "reconnection_tested": true,
+        "error_handling_tested": true
+      },
+      "timestamp": 139135.4810122,
+      "execution_time": 1.0051040649414062
+    },
+    {
+      "test_code": "O00000005",
+      "test_name": "ECM Service Registration",
+      "status": "FAILED",
+      "total_tests": 28,
+      "passed_tests": 21,
+      "failed_tests": 7,
+      "success_rate": 75.0,
+      "details": {
+        "module_initialized": true,
+        "basic_methods_available": true,
+        "status_method_works": true,
+        "health_check_works": true,
+        "start_stop_tested": true,
+        "message_sending_tested": false
+      },
+      "timestamp": 139135.4827463,
+      "execution_time": 0.0012879371643066406
+    }
+  ],
+  "recommendations": [
+    "Good test results with some areas for improvement.",
+    "Focus on fixing the failed tests to improve reliability.",
+    "Fix PDF generation engine issues in OCM service shutdown test.",
+    "Implement mock PDF generation engine for testing.",
+    "Improve WebSocket connection reliability in ECM module."
+  ]
+}

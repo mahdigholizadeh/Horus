@@ -1,0 +1,262 @@
+{
+    "service": {
+        "name": "OCM",
+        "version": "1.0.0",
+        "description": "Output Cache Management - Terminal microservice for secure output processing and delivery",
+        "status": "fully_implemented",
+        "capabilities": [
+            "output_processing",
+            "report_generation", 
+            "secure_delivery",
+            "ssl_management",
+            "priority_queuing",
+            "acknowledgment_protocol",
+            "ccu_integration",
+            "health_monitoring",
+            "error_recovery"
+        ]
+    },
+    "network": {
+        "websocket_port": 47811,
+        "api_port": 47812,
+        "web_server_host": "localhost",
+        "web_server_port": 443,
+        "web_server_endpoint": "/api/data",
+        "ssl_enabled": true,
+        "max_connections": 50,
+        "max_connections_per_host": 10,
+        "total_timeout": 60,
+        "connect_timeout": 10,
+        "read_timeout": 30
+    },
+    "ssl_configuration": {
+        "enabled": true,
+        "certificate_source": "ccu_managed",
+        "hot_reload": true,
+        "verification_mode": "required",
+        "supported_protocols": ["TLSv1.2", "TLSv1.3"],
+        "certificate_validation": true,
+        "expiry_monitoring": true,
+        "expiry_warning_days": [30, 7]
+    },
+    "priority_management": {
+        "priorities": ["A", "B", "C", "D"],
+        "default_priority": "C",
+        "priority_descriptions": {
+            "A": "Highest priority - Critical outputs",
+            "B": "High priority - Important outputs",
+            "C": "Medium priority - Standard outputs",
+            "D": "Low priority - Background outputs"
+        },
+        "queue_limits": {
+            "A": 1000,
+            "B": 1000, 
+            "C": 1000,
+            "D": 1000
+        },
+        "processing_timeouts": {
+            "A": 60,
+            "B": 120,
+            "C": 300,
+            "D": 600
+        }
+    },
+    "acknowledgment_protocol": {
+        "enabled": true,
+        "timeout": 30,
+        "retry_attempts": 3,
+        "checksum_validation": true,
+        "integrity_checks": true,
+        "confirmation_required": true
+    },
+    "report_generation": {
+        "html_templates_path": "templates/html",
+        "output_formats": ["html", "pdf"],
+        "pdf_engine": "weasyprint",
+        "pdf_fallback_engines": ["reportlab", "chromium"],
+        "pdf_settings": {
+            "page_size": "A4",
+            "orientation": "portrait",
+            "margins": {
+                "top": 20,
+                "bottom": 20,
+                "left": 20,
+                "right": 20
+            }
+        },
+        "template_validation": true,
+        "output_compression": true,
+        "concurrent_generation": true,
+        "max_concurrent_reports": 10
+    },
+    "database": {
+        "type": "sqlite",
+        "path": "data/ocm.db",
+        "partition_by_priority": true,
+        "backup_enabled": true,
+        "backup_interval": 3600,
+        "backup_retention": 168,
+        "maintenance_interval": 86400,
+        "connection_pool_size": 10,
+        "query_timeout": 30
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "structured",
+        "file": "logs/ocm.log",
+        "max_size": "100MB",
+        "backup_count": 5,
+        "rotation": "time",
+        "console_output": true,
+        "structured_logging": true,
+        "log_modules": true,
+        "performance_logging": true
+    },
+    "monitoring": {
+        "enabled": true,
+        "health_check_interval": 30,
+        "metrics_interval": 60,
+        "performance_monitoring": true,
+        "resource_monitoring": true,
+        "alert_thresholds": {
+            "error_rate": 5,
+            "response_time": 1000,
+            "memory_usage": 80,
+            "cpu_usage": 85
+        },
+        "custom_metrics": [
+            "request_processing_time",
+            "ssl_handshake_time", 
+            "report_generation_time",
+            "delivery_confirmation_time",
+            "priority_queue_depths",
+            "error_rates_by_module"
+        ]
+    },
+    "ccu_integration": {
+        "enabled": true,
+        "host": "localhost",
+        "websocket_port": 47811,
+        "service_id": "OCM_PRIMARY",
+        "heartbeat_interval": 30,
+        "max_reconnect_attempts": 10,
+        "reconnect_delay": 5,
+        "command_timeout": 30,
+        "capabilities": [
+            "certificate_management",
+            "service_control",
+            "monitoring",
+            "output_processing",
+            "priority_management",
+            "test_execution"
+        ]
+    },
+    "output_processing": {
+        "enabled": true,
+        "max_concurrent_requests": 100,
+        "request_timeout": 300,
+        "processing_pipeline": [
+            "input_validation",
+            "priority_assignment", 
+            "data_processing",
+            "report_generation",
+            "output_validation",
+            "secure_delivery",
+            "acknowledgment_verification"
+        ],
+        "validation_checks": [
+            "content_integrity",
+            "format_compliance", 
+            "completeness_verification",
+            "security_scanning",
+            "accessibility_validation",
+            "performance_optimization"
+        ]
+    },
+    "error_handling": {
+        "enabled": true,
+        "retry_attempts": 3,
+        "retry_delay": 2,
+        "exponential_backoff": true,
+        "max_retry_delay": 60,
+        "circuit_breaker": true,
+        "fallback_mechanisms": true,
+        "error_escalation": true,
+        "recovery_strategies": [
+            "automatic_retry",
+            "fallback_processing",
+            "manual_intervention",
+            "service_restart"
+        ],
+        "error_categories": [
+            "network_errors",
+            "ssl_errors",
+            "processing_errors", 
+            "validation_errors",
+            "delivery_errors",
+            "system_errors"
+        ]
+    },
+    "testing": {
+        "integration_tests_enabled": true,
+        "test_categories": [
+            "ssl_certificate_management",
+            "websocket_communication",
+            "output_processing_pipeline", 
+            "priority_request_handling",
+            "acknowledgment_protocol",
+            "report_generation",
+            "error_handling_recovery",
+            "health_monitoring",
+            "service_control_commands",
+            "concurrent_requests",
+            "ssl_certificate_hot_reload", 
+            "connection_recovery"
+        ],
+        "mock_services": {
+            "mock_ccu_websocket_port": 47815,
+            "mock_web_server_port": 8443
+        },
+        "test_runner": "run_integration_tests.py",
+        "test_reporting": true,
+        "test_timeout": 300
+    },
+    "security": {
+        "ssl_tls_enabled": true,
+        "certificate_validation": true,
+        "secure_headers": true,
+        "input_sanitization": true,
+        "output_filtering": true,
+        "access_logging": true,
+        "audit_trail": true,
+        "rate_limiting": true
+    },
+    "performance": {
+        "connection_pooling": true,
+        "request_batching": false,
+        "caching_enabled": true, 
+        "compression_enabled": true,
+        "async_processing": true,
+        "background_tasks": true,
+        "resource_limits": {
+            "max_memory": "1GB",
+            "max_cpu_percent": 80,
+            "max_disk_space": "10GB"
+        },
+        "optimization": {
+            "lazy_loading": true,
+            "connection_reuse": true,
+            "batch_processing": true
+        }
+    },
+    "directories": {
+        "config": "config/",
+        "data": "data/",
+        "logs": "logs/",
+        "temp": "temp/",
+        "templates": "templates/",
+        "reports": "reports/",
+        "cache": "cache/",
+        "certs": "certs/"
+    }
+} 
