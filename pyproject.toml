@@ -1,0 +1,38 @@
+[project]
+name = "horus"
+version = "0.1.0"
+description = "Pure-proxy distributed AI request orchestration platform in Python"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["services"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-ra --strict-markers --maxfail=5"
+markers = [
+    "integration: integration tests requiring running services or mocks",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+src = ["services", "mocks", "."]
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["services"]
+
+[tool.black]
+line-length = 100
+target-version = ["py313"]
+
+[tool.mypy]
+python_version = "3.13"
+ignore_missing_imports = true
+warn_unused_ignores = true

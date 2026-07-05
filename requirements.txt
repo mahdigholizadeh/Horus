@@ -1,0 +1,5 @@
+# Horus runtime dependencies
+# Install: pip install -r requirements.txt
+# Dev/CI:  pip install -r requirements/dev.txt
+
+-r requirements/base.txt

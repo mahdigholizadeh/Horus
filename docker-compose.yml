@@ -1,0 +1,53 @@
+# Horus local development stack
+#
+# Usage:
+#   docker compose up mock-openai mock-website   # external mocks only
+#   docker compose up horus                    # full stack (experimental)
+#
+# Set OPENAI_API_KEY in .env before running against real APIs.
+
+services:
+  horus:
+    build: .
+    container_name: horus
+    env_file: .env
+    environment:
+      HORUS_ROOT: /app
+      HORUS_ENV: development
+    ports:
+      - "3781:3781"
+      - "8001:8001"
+      - "8002:8002"
+      - "8003:8003"
+      - "8004:8004"
+      - "8082:8082"
+      - "11489:11489"
+    volumes:
+      - ./services:/app/services
+      - ./config:/app/config
+      - horus-data:/app/data
+    profiles: ["full"]
+
+  mock-openai:
+    build: .
+    container_name: horus-mock-openai
+    command: ["python", "mocks/openai_server.py"]
+    ports:
+      - "8000:8000"
+    profiles: ["mocks", "full"]
+
+  mock-website:
+    build: .
+    container_name: horus-mock-website
+    command: ["python", "mocks/website_server.py"]
+    environment:
+      RLA_HOST: host.docker.internal
+      RLA_PORT: 3781
+      OCM_HOST: host.docker.internal
+      OCM_PORT: 8082
+    ports:
+      - "9000:9000"
+    profiles: ["mocks", "full"]
+
+volumes:
+  horus-data:

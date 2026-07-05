@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+
+# Databases and runtime state
+*.db
+*.db-shm
+*.db-wal
+database_backups/
+config_backups/
+
+# Logs and reports
+*.log
+logs/
+reports/
+test_reports/
+
+# Generated I/O and caches
+API_respond/
+website_request/
+RCM_RESPONSE_OUTPUT/
+RCM_TEMP_INPUT/
+RCM_TEMP_OUTPUT/
+ocm_output/
+output/
+cache/
+temp/
+archive/
+data/
+
+# TLS private material (never commit keys)
+**/key.pem
+**/*.key
+certificates/**/key.pem
+
+# Local configuration
+production_config.json
+staging_config.json
+test_config.json
+.env.local
+
+# IDE and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Test and coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Simulator build output
+simulator/build/
