@@ -1,0 +1,95 @@
+{
+  "global": {
+    "description": "Global system paths",
+    "paths": {
+      "root": {
+        "path": "",
+        "path_type": "absolute",
+        "description": "Installation root directory",
+        "create_if_missing": false
+      },
+      "data": {
+        "path": "data",
+        "path_type": "relative_to_root",
+        "description": "Global data directory",
+        "create_if_missing": true
+      },
+      "logs": {
+        "path": "logs",
+        "path_type": "relative_to_root",
+        "description": "Global logs directory",
+        "create_if_missing": true
+      },
+      "temp": {
+        "path": "temp",
+        "path_type": "relative_to_root",
+        "description": "Global temporary directory",
+        "create_if_missing": true
+      },
+      "cache": {
+        "path": "cache",
+        "path_type": "relative_to_root",
+        "description": "Global cache directory",
+        "create_if_missing": true
+      },
+      "input": {
+        "path": "input",
+        "path_type": "relative_to_root",
+        "description": "Global input directory",
+        "create_if_missing": true
+      },
+      "output": {
+        "path": "output",
+        "path_type": "relative_to_root",
+        "description": "Global output directory",
+        "create_if_missing": true
+      },
+      "error": {
+        "path": "error",
+        "path_type": "relative_to_root",
+        "description": "Global error directory",
+        "create_if_missing": true
+      }
+    }
+  },
+  "services": {
+    "description": "Service-specific paths",
+    "CCU": {
+      "base": "services/ccu",
+      "config": "services/ccu/ccu_setting",
+      "certificates": "services/ccu/certificates",
+      "logs": "services/ccu/logs",
+      "temp": "services/ccu/temp"
+    },
+    "RCM": {
+      "base": "services/rcm",
+      "input": "services/rcm/input",
+      "output": "services/rcm/output",
+      "temp_input": "services/rcm/temp_input",
+      "temp_output": "services/rcm/temp_output",
+      "response_input": "services/rcm/RCM_RESPONSE_INPUT",
+      "response_output": "services/rcm/RCM_RESPONSE_OUTPUT"
+    },
+    "OCM": {
+      "base": "services/ocm",
+      "config": "services/ocm/deployment_config",
+      "data": "services/ocm/databases",
+      "reports": "services/ocm/reports",
+      "templates": "services/ocm/templates"
+    },
+    "JFA": {
+      "base": "services/jfa",
+      "datapool": "services/jfa/datapool"
+    },
+    "TPP": {
+      "base": "services/tpp"
+    },
+    "RLA": {
+      "base": "services/rla"
+    },
+    "TD": {
+      "base": "services/td",
+      "temp": "services/td/temp"
+    }
+  }
+}
