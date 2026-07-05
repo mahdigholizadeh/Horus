@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements/dev.txt
+      - name: Ruff
+        run: ruff check services mocks horus_startup.py conftest.py
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements/dev.txt
+      - name: Pytest (RLA TMM smoke)
+        run: pytest services/rla/TMM/test_t00000001.py services/rla/TMM/test_t00000002.py -q
+      - name: Pytest (RCM TMM collect)
+        run: pytest services/rcm/TMM --collect-only -q

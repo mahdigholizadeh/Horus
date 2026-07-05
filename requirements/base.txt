@@ -1,0 +1,322 @@
+# Horus Production Requirements
+# Install with: pip install -r requirements.txt
+# Python Version: 3.13+
+# Last Updated: December 2024
+
+# ====================================================================
+# CORE WEB FRAMEWORK AND SERVER
+# ====================================================================
+
+# FastAPI - High performance web framework
+fastapi>=0.115.0
+
+# Uvicorn - Lightning-fast ASGI server
+uvicorn[standard]>=0.32.0
+
+# Pydantic - Data validation using Python type annotations
+pydantic>=2.10.0
+
+# Starlette - Lightweight ASGI framework/toolkit
+starlette>=0.41.0
+
+# ====================================================================
+# ASYNC AND NETWORKING
+# ====================================================================
+
+# AsyncIO support (built-in Python 3.13, included for compatibility)
+# asyncio  # Built-in module
+
+# HTTP client and server libraries
+aiohttp==3.11.11
+
+# CORS support for aiohttp
+aiohttp-cors==0.7.0
+
+# Jinja2 templating engine for web dashboard
+jinja2==3.1.4
+
+httpx==0.28.1
+
+# WebSocket support for real-time communication
+websockets==14.1
+
+# Traditional HTTP requests library
+requests==2.32.3
+
+# File handling for async operations
+aiofiles==24.1.0
+
+# Multipart form data handling
+python-multipart==0.0.12
+
+# ====================================================================
+# DATABASE AND CACHING
+# ====================================================================
+
+# PostgreSQL adapter
+psycopg2-binary>=2.9.9
+
+# SQLAlchemy - SQL toolkit and ORM
+sqlalchemy==2.0.36
+
+# Alembic - Database migration tool
+alembic==1.14.0
+
+# Redis client
+redis==5.2.1
+hiredis>=3.0.1
+
+# ====================================================================
+# SECURITY AND AUTHENTICATION
+# ====================================================================
+
+# Password hashing
+bcrypt>=4.1.2
+passlib[bcrypt]==1.7.4
+
+# JWT token handling
+python-jose[cryptography]==3.3.0
+cryptography==43.0.3
+
+# OAuth2 and OpenID Connect
+authlib==1.2.1
+
+# ====================================================================
+# API INTEGRATIONS
+# ====================================================================
+
+# OpenAI API client
+openai==1.54.3
+
+# HTTP client with advanced features
+httpcore==1.0.7
+
+# ====================================================================
+# DATA PROCESSING AND SERIALIZATION
+# ====================================================================
+
+# JSON handling and validation
+orjson>=3.10.0
+
+# JSON Schema validation (Required for RLA container)
+jsonschema>=4.0.0
+
+# Message packing for efficient data transfer
+msgpack==1.1.0
+
+# Fast compression
+lz4==4.3.3
+
+# XML processing
+lxml==5.3.0
+
+# ====================================================================
+# PDF AND DOCUMENT GENERATION
+# ====================================================================
+
+# WeasyPrint - HTML/CSS to PDF converter
+weasyprint>=62.0
+
+# ReportLab - PDF generation library
+reportlab==4.2.5
+
+# Image processing library
+Pillow>=10.4.0
+
+# Font tools for PDF generation
+fonttools==4.55.3
+
+# ====================================================================
+# MONITORING AND LOGGING
+# ====================================================================
+
+# Prometheus metrics client
+prometheus-client==0.21.1
+
+# System and process utilities
+psutil>=6.1.0
+
+# Structured logging
+structlog>=24.4.0
+
+# JSON logging
+python-json-logger==3.2.1
+
+# ====================================================================
+# TASK QUEUE AND BACKGROUND PROCESSING
+# ====================================================================
+
+# Celery - Distributed task queue
+celery==5.4.0
+
+# Kombu - Messaging library for Celery
+kombu==5.4.2
+
+# Flower - Celery monitoring tool
+flower==2.0.1
+
+# ====================================================================
+# CONFIGURATION AND ENVIRONMENT
+# ====================================================================
+
+# Environment variable management
+python-decouple==3.8
+
+# Configuration management
+pydantic-settings==2.6.1
+
+# YAML configuration support
+pyyaml>=6.0.2
+
+# ====================================================================
+# DOCKER AND CONTAINERIZATION
+# ====================================================================
+
+# Docker Python SDK (for container management scripts)
+docker==7.1.0
+
+# ====================================================================
+# SCIENTIFIC COMPUTING (Required for JFA container)
+# ====================================================================
+
+# NumPy - Fundamental package for scientific computing
+numpy>=1.21.0
+
+# Pandas - Data manipulation and analysis library
+pandas>=2.0.0
+
+# SciPy - Scientific computing library
+scipy>=1.10.0
+
+# Matplotlib - Plotting library
+matplotlib>=3.7.0
+
+# ====================================================================
+# GEOSPATIAL DATA PROCESSING (Required for TD container)
+# ====================================================================
+
+# GeoPandas - Geographic data manipulation
+geopandas>=0.12.0
+
+# Shapely - Geometric objects and operations
+shapely>=2.0.0
+
+# Fiona - Reading and writing spatial data files
+fiona>=1.9.0
+
+# Pyproj - Cartographic projections and coordinate transformations
+pyproj>=3.4.0
+
+# ====================================================================
+# UTILITY LIBRARIES
+# ====================================================================
+
+# Date and time utilities
+python-dateutil==2.8.2
+
+# Timezone support
+pytz==2024.2
+
+# Click - Command line interface creation
+click==8.1.7
+
+# Rich - Rich text and beautiful formatting
+rich==13.9.4
+
+# Tabulate - Pretty-print tabular data
+tabulate==0.9.0
+
+# ====================================================================
+# PERFORMANCE AND OPTIMIZATION
+# ====================================================================
+
+# Caching library
+cachetools==5.5.0
+
+# Memory optimization
+pympler==1.1
+
+# Profiling support
+py-spy>=0.3.14
+
+# ====================================================================
+# NETWORKING AND PROTOCOLS
+# ====================================================================
+
+# DNS resolution
+dnspython==2.4.2
+
+# Network ping functionality
+ping3==4.0.4
+
+# Email handling
+email-validator==2.2.0
+
+# URL parsing and manipulation
+yarl==1.18.3
+
+# ====================================================================
+# SYSTEM DEPENDENCIES NOTES
+# ====================================================================
+
+# The following system packages must be installed separately:
+# 
+# Ubuntu/Debian:
+# sudo apt-get update
+# sudo apt-get install -y \
+#     libpq-dev \
+#     libffi-dev \
+#     libssl-dev \
+#     libxml2-dev \
+#     libxslt1-dev \
+#     libjpeg-dev \
+#     libfreetype6-dev \
+#     zlib1g-dev \
+#     libcairo2-dev \
+#     libpango-1.0-0 \
+#     libpangocairo-1.0-0 \
+#     libgdk-pixbuf2.0-0 \
+#     libffi-dev \
+#     shared-mime-info
+#
+# For WeasyPrint on Linux servers:
+# sudo apt-get install libgobject-2.0-0
+#
+# For Chrome/Chromium (optional PDF capabilities):
+# - Ubuntu/Debian: sudo apt-get install chromium-browser
+# - CentOS/RHEL: sudo yum install chromium
+# - macOS: brew install chromium
+
+# ====================================================================
+# OPTIONAL DEPENDENCIES FOR ENHANCED FEATURES
+# ====================================================================
+
+# Gunicorn - Python WSGI HTTP Server for UNIX (alternative to uvicorn)
+gunicorn==21.2.0
+
+# Gevent - Coroutine-based Python networking library
+gevent>=24.11.0
+
+# Sentry SDK for error tracking
+sentry-sdk[fastapi]==2.19.0
+
+# New Relic for application monitoring
+newrelic>=10.3.0
+
+# ====================================================================
+# VERSION COMPATIBILITY NOTES
+# ====================================================================
+
+# This requirements file is optimized for:
+# - Python 3.13+
+# - Ubuntu 24.04 LTS
+# - Docker deployment
+# - Production environments
+#
+# For development environments, additional packages may be needed:
+# - jupyter
+# - ipython
+# - notebook
+#
+# All versions are pinned for production stability.
+# Review and update quarterly or when security updates are available.
