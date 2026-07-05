@@ -1,0 +1,272 @@
+{
+  "test_suite": "JFA Validation Failure Recognition",
+  "timestamp": "2025-07-28T19:16:17.687573",
+  "ecm_available": true,
+  "results": [
+    {
+      "success": true,
+      "test_code": "T0000019",
+      "test_name": "JFA Invalid Data Recognition",
+      "message": "Invalid data recognition test passed",
+      "details": {
+        "test_case_1": {
+          "request_id": "test_invalid_001",
+          "recognition_type": "invalid_data",
+          "invalid_parts": [
+            "template structure",
+            "choices object structure"
+          ],
+          "error_categories": {
+            "structure_errors": [
+              "template structure",
+              "template structure",
+              "choices object structure",
+              "template structure"
+            ],
+            "type_errors": [],
+            "format_errors": [],
+            "business_rule_errors": [],
+            "field_errors": []
+          },
+          "total_invalid_parts": 2,
+          "template_analysis": {
+            "has_id": true,
+            "has_object": true,
+            "has_created": false,
+            "has_model": false,
+            "has_choices": false,
+            "has_usage": false,
+            "has_jfa_fields": false
+          },
+          "timestamp": "2025-07-28T19:16:17.685885",
+          "service": "JFA"
+        },
+        "test_case_2": {
+          "request_id": "test_invalid_002",
+          "recognition_type": "invalid_data",
+          "invalid_parts": [
+            "template structure",
+            "choices object structure"
+          ],
+          "error_categories": {
+            "structure_errors": [
+              "template structure",
+              "template structure",
+              "choices object structure"
+            ],
+            "type_errors": [],
+            "format_errors": [],
+            "business_rule_errors": [],
+            "field_errors": []
+          },
+          "total_invalid_parts": 2,
+          "template_analysis": {
+            "has_id": true,
+            "has_object": true,
+            "has_created": true,
+            "has_model": true,
+            "has_choices": true,
+            "has_usage": true,
+            "has_jfa_fields": false
+          },
+          "timestamp": "2025-07-28T19:16:17.685914",
+          "service": "JFA"
+        },
+        "ecm_type": "real"
+      }
+    },
+    {
+      "success": true,
+      "test_code": "T0000019",
+      "test_name": "JFA Insufficient Data Recognition",
+      "message": "Insufficient data recognition test passed",
+      "details": {
+        "test_case_1": {
+          "request_id": "test_insufficient_001",
+          "recognition_type": "insufficient_data",
+          "missing_data": [
+            "Required field: choices",
+            "Required field: usage",
+            "JFA field: flag",
+            "JFA field: loca",
+            "JFA field: cust",
+            "JFA field: sinf",
+            "choices object",
+            "usage object",
+            "location data (loca)",
+            "customer data (cust)",
+            "system information (sinf)",
+            "required data field"
+          ],
+          "insufficient_data": [],
+          "total_missing": 12,
+          "total_insufficient": 0,
+          "data_completeness": {
+            "basic_fields_complete": false,
+            "jfa_fields_present": [],
+            "has_location_data": false,
+            "has_customer_data": false,
+            "has_system_data": false,
+            "choices_structure_complete": false,
+            "usage_structure_complete": false
+          },
+          "timestamp": "2025-07-28T19:16:17.686307",
+          "service": "JFA"
+        },
+        "test_case_2": {
+          "request_id": "test_insufficient_002",
+          "recognition_type": "insufficient_data",
+          "missing_data": [
+            "JFA field: flag",
+            "JFA field: loca",
+            "JFA field: cust",
+            "JFA field: sinf",
+            "choices.role",
+            "choices.content",
+            "location data (loca)",
+            "customer data (cust)",
+            "system information (sinf)",
+            "required data field"
+          ],
+          "insufficient_data": [],
+          "total_missing": 10,
+          "total_insufficient": 0,
+          "data_completeness": {
+            "basic_fields_complete": true,
+            "jfa_fields_present": [],
+            "has_location_data": false,
+            "has_customer_data": false,
+            "has_system_data": false,
+            "choices_structure_complete": true,
+            "usage_structure_complete": true
+          },
+          "timestamp": "2025-07-28T19:16:17.686326",
+          "service": "JFA"
+        },
+        "test_case_3": {
+          "request_id": "test_insufficient_003",
+          "recognition_type": "insufficient_data",
+          "missing_data": [
+            "choices.role",
+            "choices.content",
+            "required data field",
+            "customer information"
+          ],
+          "insufficient_data": [
+            "usage.completion_tokens",
+            "usage.total_tokens",
+            "location.city",
+            "location.coordinates",
+            "location.climate_zone",
+            "customer.customer_type",
+            "customer.energy_requirements",
+            "system.system_size",
+            "system.efficiency_parameters"
+          ],
+          "total_missing": 4,
+          "total_insufficient": 9,
+          "data_completeness": {
+            "basic_fields_complete": true,
+            "jfa_fields_present": [
+              "flag",
+              "loca",
+              "cust",
+              "sinf"
+            ],
+            "has_location_data": true,
+            "has_customer_data": true,
+            "has_system_data": true,
+            "choices_structure_complete": true,
+            "usage_structure_complete": true
+          },
+          "timestamp": "2025-07-28T19:16:17.686342",
+          "service": "JFA"
+        },
+        "ecm_type": "real"
+      }
+    },
+    {
+      "success": true,
+      "test_code": "T0000019",
+      "test_name": "JFA Validation Recognition Integration",
+      "message": "Integration test passed",
+      "details": {
+        "invalid_recognition": {
+          "request_id": "test_integration_001",
+          "recognition_type": "invalid_data",
+          "invalid_parts": [
+            "template structure",
+            "choices object structure",
+            "usage object structure"
+          ],
+          "error_categories": {
+            "structure_errors": [
+              "template structure",
+              "template structure",
+              "choices object structure",
+              "usage object structure",
+              "template structure",
+              "template structure",
+              "template structure",
+              "template structure"
+            ],
+            "type_errors": [],
+            "format_errors": [],
+            "business_rule_errors": [],
+            "field_errors": []
+          },
+          "total_invalid_parts": 3,
+          "template_analysis": {
+            "has_id": true,
+            "has_object": true,
+            "has_created": true,
+            "has_model": true,
+            "has_choices": true,
+            "has_usage": false,
+            "has_jfa_fields": false
+          },
+          "timestamp": "2025-07-28T19:16:17.686619",
+          "service": "JFA"
+        },
+        "insufficient_recognition": {
+          "request_id": "test_integration_001",
+          "recognition_type": "insufficient_data",
+          "missing_data": [
+            "Required field: usage",
+            "JFA field: flag",
+            "JFA field: loca",
+            "JFA field: cust",
+            "JFA field: sinf",
+            "choices object structure",
+            "usage object",
+            "location data (loca)",
+            "customer data (cust)",
+            "system information (sinf)",
+            "required data field"
+          ],
+          "insufficient_data": [],
+          "total_missing": 11,
+          "total_insufficient": 0,
+          "data_completeness": {
+            "basic_fields_complete": false,
+            "jfa_fields_present": [],
+            "has_location_data": false,
+            "has_customer_data": false,
+            "has_system_data": false,
+            "choices_structure_complete": false,
+            "usage_structure_complete": false
+          },
+          "timestamp": "2025-07-28T19:16:17.686633",
+          "service": "JFA"
+        },
+        "ecm_type": "real"
+      }
+    }
+  ],
+  "summary": {
+    "total_tests": 3,
+    "passed_tests": 3,
+    "failed_tests": 0,
+    "success_rate": 100.0
+  }
+}

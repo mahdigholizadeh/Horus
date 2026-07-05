@@ -1,0 +1,19 @@
+{
+    "id": "chatcmpl-abc123",
+    "object": "chat.completion",
+    "created": 1716129999,
+    "model": "gpt-4",
+    "choices": {
+        "index": "null",
+        "message": {
+            "role": "assistant",
+            "content": "{\n  \"name\": \"John\",\n  \"location\": \"Paris\",\n  \"date\": \"July 5, 2023\"\n}"
+        },
+        "finish_reason": "stop"
+    },
+    "usage": {
+        "prompt_tokens": "null",
+        "completion_tokens": "null",
+        "total_tokens": "null"
+    }
+}

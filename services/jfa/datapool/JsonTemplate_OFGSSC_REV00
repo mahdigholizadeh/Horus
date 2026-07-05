@@ -1,0 +1,66 @@
+{
+  "id": "chatcmpl-abc123",
+  "object": "chat.completion",
+  "created": 1716129999,
+  "model": "gpt-4",
+  "choices": {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"name\": \"John\",\n  \"location\": \"Paris\",\n  \"date\": \"July 5, 2023\"\n}"
+      },
+      "finish_reason": "stop",
+	  "flag" : {
+		  "vald" : 1,
+		  "calc" : 1,
+		  "plat" : 1,
+		  "mpsz" : 1,
+		  "econ" : 1,
+		  "rcon" : 0,
+		  "mode" : 1
+	  },
+	  "loca" : {
+	      "Ecit" : "tehran", 
+		  "Fcit" : "تهران",
+		  "lat" : 35.6892,
+		  "lng" : 51.3889
+	  },
+	  "cust" :{
+	      "mode" : 1,
+		  "need" : 1,
+		  "npsz" : 5
+	   },
+	  "sinf" :{
+		  "mfreg" : 1,
+		  "mled" : 1,
+		  "mlcd" : 1,
+		  "mtele" : 1,
+		  "mlamp" :1,
+		  "mpump" :1,
+		  "mcool" :1,
+		  "mcamd" :1,
+		  "mpc" : 1,
+		  "mpri" : 1,
+		  "mwel" : 1,
+		  "mmlo" : 1,
+		  "nfreg" : 0,
+		  "nled" : 0,
+		  "nlcd" : 0,
+		  "ntele" : 0,
+		  "nlamp" : 0,
+		  "npump" : 0,
+		  "ncool" : 0,
+		  "ncamd" : 0,
+		  "npc" : 0,
+		  "npri" : 0,
+		  "nwel" : 0,
+		  "nmlo" :0
+		  
+	  }
+    },
+	"usage": {
+    "prompt_tokens": 25,
+    "completion_tokens": 18,
+    "total_tokens": 43
+  }
+}

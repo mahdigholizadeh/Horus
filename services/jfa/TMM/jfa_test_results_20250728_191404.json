@@ -1,0 +1,697 @@
+{
+  "test_t00000001": {
+    "success": true,
+    "test_code": "T00000001",
+    "test_name": "JDPM - JSON Data Processing Module Unit Test",
+    "message": "JDPM unit test passed",
+    "details": {
+      "valid_template_processed": true,
+      "alternative_template_processed": true,
+      "size_limit_enforced": true,
+      "validation_failure_detected": true,
+      "results": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 0.135259,
+    "timestamp": "2025-07-28T19:12:58.469435"
+  },
+  "test_t00000002": {
+    "success": true,
+    "test_code": "T00000002",
+    "test_name": "TVM - Template Validation Module Unit Test",
+    "message": "TVM unit test passed",
+    "details": {
+      "valid_template_passed": true,
+      "business_rule_violation_detected": true,
+      "missing_field_detected": true,
+      "results": [
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 0.109361,
+    "timestamp": "2025-07-28T19:12:58.578896"
+  },
+  "test_t00000003": {
+    "success": true,
+    "test_code": "T00000003",
+    "test_name": "BDM - Binary Data Module Unit Test",
+    "message": "BDM unit test passed",
+    "details": {
+      "binary_generation_successful": true,
+      "binary_data_created": true,
+      "file_created": true,
+      "checksum_valid": true,
+      "size_limit_enforced": true,
+      "results": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 0.227847,
+    "timestamp": "2025-07-28T19:12:58.806857"
+  },
+  "test_t00000004": {
+    "success": true,
+    "test_code": "T00000004",
+    "test_name": "DAM - Data Analysis Module Unit Test",
+    "message": "DAM unit test passed",
+    "details": {
+      "normal_data_high_quality": true,
+      "normal_data_approved": true,
+      "anomalous_data_low_quality": true,
+      "anomalous_data_flagged": true,
+      "anomalies_detected": true,
+      "analysis_summary_generated": true,
+      "anomalies_counted": true,
+      "quality_scores": {
+        "normal_data": 0.8122222222222222,
+        "anomalous_data": 0.6955555555555555
+      },
+      "decisions": {
+        "normal_data": "reject",
+        "anomalous_data": "reject"
+      },
+      "results": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 0.176879,
+    "timestamp": "2025-07-28T19:12:58.984088"
+  },
+  "test_t00000005": {
+    "success": true,
+    "test_code": "T00000005",
+    "test_name": "IPM - Input Processing Module Unit Test",
+    "message": "IPM unit test passed",
+    "details": {
+      "clean_file_passed": true,
+      "sql_injection_detected": true,
+      "command_injection_detected": true,
+      "results": [
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 0.10506,
+    "timestamp": "2025-07-28T19:12:59.089235"
+  },
+  "test_t00000006": {
+    "success": true,
+    "test_code": "T00000006",
+    "test_name": "OPM - Output Processing Module Unit Test",
+    "message": "OPM unit test passed",
+    "details": {
+      "output_generation_successful": true,
+      "output_is_structured_json": true,
+      "contains_jfa_flag": true,
+      "jfa_flag_has_valid_value": true,
+      "encapsulates_analysis_metadata": true,
+      "processing_summary_included": true,
+      "modules_used_correctly_listed": true,
+      "output_structure": {
+        "JFA_flag": 1,
+        "success": true,
+        "timestamp": "2025-07-28T19:12:59.188111",
+        "validation": {
+          "valid": true,
+          "processing_time": 0.15,
+          "validation_rules_passed": 12,
+          "validation_rules_failed": 0
+        },
+        "binary_generation": {
+          "success": true,
+          "file_path": "/tmp/analysis_result_001.bin",
+          "file_size": 2048,
+          "checksum": "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6",
+          "compression_ratio": 0.75
+        },
+        "analysis": {
+          "quality_score": 0.92,
+          "decision": "approve",
+          "anomalies_detected": [],
+          "recommendations": [
+            "System configuration is optimal",
+            "Consider adding battery storage for better efficiency"
+          ],
+          "technical_metrics": {
+            "efficiency_rating": "A+",
+            "reliability_score": 0.95,
+            "performance_index": 0.88
+          }
+        },
+        "metadata": {
+          "request_id": "REQ-001",
+          "processing_timestamp": "2024-01-15T10:30:00Z",
+          "modules_used": [
+            "JDPM",
+            "TVM",
+            "BDM",
+            "DAM"
+          ],
+          "version": "1.0.0"
+        },
+        "processing_summary": {
+          "total_processing_time": 0.15,
+          "success": true,
+          "modules_executed": [
+            "JDPM",
+            "TVM",
+            "BDM",
+            "DAM"
+          ]
+        },
+        "modules_used": [
+          "JDPM",
+          "TVM",
+          "BDM",
+          "DAM"
+        ]
+      },
+      "results": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 0.109345,
+    "timestamp": "2025-07-28T19:12:59.198683"
+  },
+  "test_t00000007": {
+    "success": true,
+    "test_code": "T00000007",
+    "test_name": "FIM - File Interface Module Unit Test",
+    "message": "FIM unit test passed",
+    "details": {
+      "file_write_successful": true,
+      "file_created": true,
+      "file_read_successful": true,
+      "data_integrity_maintained": true,
+      "file_size_valid": true,
+      "binary_write_successful": true,
+      "binary_read_successful": true,
+      "binary_data_integrity": true,
+      "results": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 0.129963,
+    "timestamp": "2025-07-28T19:12:59.328738"
+  },
+  "test_t00000008": {
+    "success": true,
+    "test_code": "T00000008",
+    "test_name": "ECM - External Control Module Unit Test",
+    "message": "ECM unit test passed",
+    "details": {
+      "connection_established": true,
+      "registration_sent": true,
+      "registration_message_received": true,
+      "service_name_correct": true,
+      "capabilities_included": true,
+      "status_included": true,
+      "disconnection_detected": true,
+      "reconnection_successful": true,
+      "results": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 6.232159,
+    "timestamp": "2025-07-28T19:13:05.561000"
+  },
+  "test_t00000009": {
+    "success": true,
+    "test_code": "T00000009",
+    "test_name": "ARM - API Request Module Unit Test",
+    "message": "ARM unit test passed",
+    "details": {
+      "basic_functionality": [
+        true,
+        true,
+        true
+      ],
+      "health_check": [
+        true,
+        true,
+        true
+      ],
+      "server_configuration": [
+        true,
+        true,
+        true
+      ],
+      "statistics": [
+        true,
+        true,
+        true
+      ],
+      "app_routes": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "results": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 0.792889,
+    "timestamp": "2025-07-28T19:13:06.354067"
+  },
+  "test_t00000010": {
+    "success": true,
+    "test_code": "T00000010",
+    "test_name": "CIM - Configuration Interface Module Unit Test",
+    "message": "CIM unit test passed",
+    "details": {
+      "configuration_loaded": true,
+      "required_sections_present": true,
+      "environment_override_working": true,
+      "configuration_valid": true,
+      "reload_successful": true,
+      "max_template_size_correct": true,
+      "api_port_correct": true,
+      "set_config_value_works": true,
+      "set_value_persisted": true,
+      "export_successful": true,
+      "exported_config_valid": true,
+      "exported_config_has_logging": true,
+      "current_config": {
+        "service_name": "JFA",
+        "version": "1.0.0",
+        "debug": false,
+        "max_requests": 1000,
+        "timeout": 300,
+        "logging": {
+          "level": "DEBUG",
+          "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+          "file": "jfa.log"
+        },
+        "processing": {
+          "max_template_size": 10485760,
+          "max_depth": 10,
+          "timeout": 30
+        },
+        "api": {
+          "port": 8001,
+          "host": "0.0.0.0",
+          "debug": true
+        },
+        "database": {
+          "url": "sqlite:///jfa.db",
+          "pool_size": 10
+        }
+      },
+      "results": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 0.108321,
+    "timestamp": "2025-07-28T19:13:06.462523"
+  },
+  "test_t00000011": {
+    "success": true,
+    "test_code": "T00000011",
+    "test_name": "EMM - Error Management Module Unit Test",
+    "message": "EMM unit test passed",
+    "details": {
+      "json_decode_error_handled": true,
+      "json_error_code_generated": true,
+      "json_error_code_length_correct": true,
+      "json_error_module_correct": true,
+      "timeout_error_handled": true,
+      "timeout_error_code_generated": true,
+      "timeout_error_code_length_correct": true,
+      "timeout_error_module_correct": true,
+      "error_code1_generated": true,
+      "error_code1_format_correct": true,
+      "error_code2_generated": true,
+      "error_code2_format_correct": true,
+      "error_logging_successful": true,
+      "recovery_strategy_executed": true,
+      "error_statistics_generated": true,
+      "error_statistics_has_total": true,
+      "error_statistics_has_by_module": true,
+      "error_statistics_has_by_type": true,
+      "error_code_lookup_works": true,
+      "error_response_generated": true,
+      "error_response_has_code": true,
+      "error_response_has_message": true,
+      "error_response_has_timestamp": true,
+      "valid_error_code_validated": true,
+      "invalid_error_code_rejected": true,
+      "results": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 0.125119,
+    "timestamp": "2025-07-28T19:13:06.587762"
+  },
+  "test_t00000012": {
+    "success": true,
+    "test_code": "T00000012",
+    "test_name": "MSM - Monitoring System Module Unit Test",
+    "message": "MSM unit test passed",
+    "details": {
+      "metrics_reset_successful": true,
+      "metrics_data_structure_valid": true,
+      "templates_processed_correct": true,
+      "average_processing_time_calculated": true,
+      "average_processing_time_reasonable": true,
+      "total_processing_time_present": true,
+      "successful_processing_present": true,
+      "failed_processing_present": true,
+      "success_rate_present": true,
+      "system_metrics_structure_valid": true,
+      "cpu_usage_present": true,
+      "memory_usage_present": true,
+      "disk_usage_present": true,
+      "failed_processing_counted": true,
+      "failed_processing_updated": true,
+      "performance_metrics_generated": true,
+      "throughput_present": true,
+      "response_time_present": true,
+      "error_rate_present": true,
+      "health_check_works": true,
+      "health_status_valid": true,
+      "health_timestamp_present": true,
+      "metrics_export_successful": true,
+      "exported_data_valid": true,
+      "exported_data_has_templates": true,
+      "metrics_cleanup_successful": true,
+      "final_metrics": {
+        "templates_processed": 10,
+        "total_processing_time": 1.0654032230377197,
+        "average_processing_time": 0.10654032230377197,
+        "successful_processing": 10,
+        "failed_processing": 0,
+        "success_rate": 1.0,
+        "processing_times": [
+          0.10403037071228027,
+          0.10541415214538574,
+          0.11200428009033203,
+          0.10373926162719727,
+          0.11127042770385742,
+          0.10179877281188965,
+          0.11491537094116211,
+          0.10881710052490234,
+          0.10268282890319824,
+          0.10073065757751465,
+          0.5
+        ],
+        "system_metrics": {
+          "cpu_usage": 33.3,
+          "memory_usage": 21.5,
+          "disk_usage": 55.3,
+          "network_io": 0,
+          "uptime": 0
+        },
+        "timestamp": "2025-07-28T19:13:07.759747"
+      },
+      "results": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 1.192151,
+    "timestamp": "2025-07-28T19:13:07.780079"
+  },
+  "test_t00000013": {
+    "success": true,
+    "test_code": "T00000013",
+    "test_name": "BTM - Background Tasks Module Unit Test",
+    "message": "BTM unit test passed",
+    "details": {
+      "dummy_file_created": true,
+      "scheduling_non_blocking": true,
+      "task_scheduled_successfully": true,
+      "scheduled_tasks_listed": true,
+      "dummy_file_deleted": true,
+      "task_status_tracked": true,
+      "multiple_tasks_scheduled": true,
+      "multiple_tasks_scheduled_2": true,
+      "multiple_tasks_scheduled_3": true,
+      "multiple_tasks_completed_1": true,
+      "multiple_tasks_completed_2": true,
+      "multiple_tasks_completed_3": true,
+      "task_cancellation_works": true,
+      "recurring_task_scheduled": true,
+      "recurring_task_executed": true,
+      "task_statistics_generated": true,
+      "statistics_has_total": true,
+      "statistics_has_completed": true,
+      "statistics_has_failed": true,
+      "results": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 9.642109,
+    "timestamp": "2025-07-28T19:13:17.422367"
+  },
+  "test_t00000014": {
+    "success": true,
+    "test_code": "T00000014",
+    "test_name": "TMM - Test Management Module Unit Test",
+    "message": "TMM unit test passed",
+    "details": {
+      "basic_functionality": [
+        true,
+        true,
+        true
+      ],
+      "health_check": [
+        true,
+        true,
+        true
+      ],
+      "test_suite_discovery": [
+        true,
+        true
+      ],
+      "available_tests": [
+        true,
+        true,
+        true
+      ],
+      "test_results": true,
+      "statistics": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "test_discovery": true,
+      "metadata_retrieval": true,
+      "test_coverage": [
+        true,
+        true,
+        true
+      ],
+      "cleanup_functionality": [
+        true,
+        true
+      ],
+      "specific_test_execution": true,
+      "results": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "execution_time": 0.365091,
+    "timestamp": "2025-07-28T19:13:17.787639"
+  },
+  "test_t00000015": {
+    "success": false,
+    "error": "Could not parse test output",
+    "raw_output": "Warning: Error stopping server: Cannot run the event loop while another loop is running\n{\"success\": true, \"test_code\": \"T00000015\", \"test_name\": \"API Test - Batch Processing Endpoint\", \"message\": \"Batch processing API test passed\", \"details\": {\"response_status_200\": true, \"response_is_json_array\": true, \"array_has_two_results\": true, \"result1_has_request_id\": true, \"result2_has_request_id\": true, \"result1_has_success\": true, \"result2_has_success\": true, \"request_id1_matches\": true, \"request_id2_matches\": true, \"result1_has_processing_result\": true, \"result2_has_processing_result\": true, \"result1_has_jfa_flag\": true, \"result2_has_jfa_flag\": true, \"result1_has_timestamp\": true, \"result2_has_timestamp\": true, \"empty_batch_rejected\": true, \"empty_batch_error_message\": true, \"large_batch_rejected\": true, \"large_batch_error_message\": true, \"response_data\": [{\"request_id\": \"BATCH-001\", \"success\": true, \"processing_result\": {\"system_id\": \"SOLAR-001\", \"analysis_complete\": true, \"quality_score\": 0.95}, \"JFA_flag\": 1, \"timestamp\": \"2025-07-28T19:13:24.341677\"}, {\"request_id\": \"BATCH-002\", \"success\": true, \"processing_result\": {\"system_id\": \"SOLAR-002\", \"analysis_complete\": true, \"quality_score\": 0.95}, \"JFA_flag\": 1, \"timestamp\": \"2025-07-28T19:13:24.341700\"}], \"results\": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]}}\n",
+    "execution_time": 11.614341,
+    "timestamp": "2025-07-28T19:13:29.402161"
+  },
+  "test_t00000016": {
+    "success": false,
+    "error": "Could not parse test output",
+    "raw_output": "Warning: Error stopping server: Cannot run the event loop while another loop is running\n{\"success\": true, \"test_code\": \"T00000016\", \"test_name\": \"E2E Happy Path Scenario\", \"message\": \"E2E happy path scenario passed\", \"details\": {\"request_successful\": true, \"response_success_flag\": true, \"all_pipeline_stages_executed\": true, \"high_quality_score_achieved\": true, \"success_decision_made\": true, \"binary_data_reference_present\": true, \"jfa_flag_present\": true, \"jfa_flag_valid_value\": true, \"all_required_fields_present\": true, \"processing_summary_has_time\": true, \"processing_summary_has_success\": true, \"processing_summary_has_modules\": true, \"processing_time_reasonable\": true, \"processing_time_within_limit\": true, \"analysis_has_quality_score\": true, \"analysis_has_decision\": true, \"analysis_has_recommendations\": true, \"analysis_has_technical_metrics\": true, \"recommendations_provided\": true, \"technical_metrics_present\": true, \"pipeline_stages_validated\": true, \"input_processing_stage\": true, \"json_processing_stage\": true, \"template_validation_stage\": true, \"binary_generation_stage\": true, \"data_analysis_stage\": true, \"quality_score\": 0.95, \"decision\": \"success\", \"processing_time\": 5.9604644775390625e-06, \"results\": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]}}\n",
+    "execution_time": 11.921248,
+    "timestamp": "2025-07-28T19:13:41.323728"
+  },
+  "test_t00000017": {
+    "success": false,
+    "error": "Could not parse test output",
+    "raw_output": "Warning: Error stopping server: Cannot run the event loop while another loop is running\n{\"success\": true, \"test_code\": \"T00000017\", \"test_name\": \"E2E Pipeline Failure (Validation Stage)\", \"message\": \"E2E pipeline failure test passed\", \"details\": {\"request_properly_rejected\": true, \"response_indicates_failure\": true, \"error_message_present\": true, \"validation_error_detected\": true, \"ipm_stage_executed\": true, \"jdpm_stage_executed\": true, \"tvm_stage_executed\": true, \"bdm_stage_not_executed\": true, \"dam_stage_not_executed\": true, \"error_details_provided\": true, \"failure_stage_specified\": true, \"request_id_preserved\": true, \"timestamp_present\": true, \"missing_field_rejected\": true, \"missing_field_error_detected\": true, \"missing_field_pipeline_halted\": true, \"missing_field_later_stages_skipped\": true, \"error_message\": \"Validation error: Total system wattage (3600W) exceeds inverter capacity (2000.0W)\", \"failure_stage\": \"TVM\", \"results\": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]}}\n",
+    "execution_time": 11.592817,
+    "timestamp": "2025-07-28T19:13:52.916820"
+  },
+  "test_t00000018": {
+    "success": false,
+    "error": "Could not parse test output",
+    "raw_output": "Warning: Error stopping server: Cannot run the event loop while another loop is running\n{\"success\": true, \"test_code\": \"T00000018\", \"test_name\": \"Security Test - API Key Authentication\", \"message\": \"API key authentication test passed\", \"details\": {\"request_without_key_rejected\": true, \"auth_error_message_present\": true, \"request_with_key_accepted\": true, \"auth_error_not_present\": true, \"invalid_key_rejected\": true, \"invalid_key_error_detected\": true, \"empty_key_rejected\": true, \"batch_without_key_rejected\": true, \"batch_with_key_accepted\": true, \"health_endpoint_accessible\": true, \"results\": [true, true, true, true, true, true, true, true, true, true]}}\n",
+    "execution_time": 11.871723,
+    "timestamp": "2025-07-28T19:14:04.788740"
+  },
+  "test_t0000019": {
+    "success": false,
+    "error": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import asyncio; import test_t0000019; result = asyncio.run(test_t0000019.test_t0000019()); import json; print(json.dumps(result, default=str))\n                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'test_t0000019' has no attribute 'test_t0000019'\n",
+    "execution_time": 0.121483,
+    "timestamp": "2025-07-28T19:14:04.910502"
+  }
+}
