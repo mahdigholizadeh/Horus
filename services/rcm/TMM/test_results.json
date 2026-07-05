@@ -1,0 +1,350 @@
+{
+  "success": false,
+  "total_tests": 46,
+  "passed_tests": 6,
+  "failed_tests": 40,
+  "success_rate": 13.043478260869565,
+  "unit_tests": {
+    "test_type": "unit",
+    "total_tests": 35,
+    "passed_tests": 6,
+    "failed_tests": 29,
+    "success_rate": 17.142857142857142,
+    "total_execution_time": 2.1848738193511963,
+    "results": [
+      {
+        "success": true,
+        "test_name": "GIDVM - Successful Ingestion & Sorting",
+        "execution_time": 0.011584043502807617,
+        "output": "Processed 4/4 files successfully (100.0% success rate)",
+        "status": "pass"
+      },
+      {
+        "success": true,
+        "test_name": "GIDVM - Invalid JSON Rejection",
+        "execution_time": 0.047686100006103516,
+        "output": "Rejected 5/5 invalid files (100.0% rejection rate)",
+        "status": "pass"
+      },
+      {
+        "success": true,
+        "test_name": "PBRPM - Priority Queue Processing",
+        "execution_time": 1.1250665187835693,
+        "output": "Priority processing: 5/5 successful (100.0% success rate)",
+        "status": "pass"
+      },
+      {
+        "success": false,
+        "test_name": "AACM - Successful Async API Call",
+        "execution_time": 0.23268771171569824,
+        "output": "Test execution failed: 'coroutine' object does not support the asynchronous context manager protocol",
+        "status": "fail"
+      },
+      {
+        "success": true,
+        "test_name": "RTRMM - Response to Request ID Mapping",
+        "execution_time": 0.005196094512939453,
+        "output": "Stub: Not implemented",
+        "status": "pass"
+      },
+      {
+        "success": true,
+        "test_name": "RLM - Rate Limit Enforcement",
+        "execution_time": 0.004498004913330078,
+        "output": "Stub: Not implemented",
+        "status": "pass"
+      },
+      {
+        "success": false,
+        "test_name": "MMM & DRM - Memory Spill-to-Disk & Restore",
+        "execution_time": 0.01759052276611328,
+        "output": "Test execution failed: 'MemoryManagementModule' object has no attribute 'spill_to_disk'",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "BAAIM - Default & Override API Usage",
+        "execution_time": 0.006701231002807617,
+        "output": "Test T0000008 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "AAAIM - Default & Override Agent Usage",
+        "execution_time": 0.005675077438354492,
+        "output": "Test T0000009 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "SAAIM - Special API Call",
+        "execution_time": 0.005465507507324219,
+        "output": "Test T0000010 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "SODVM - JSON Verification",
+        "execution_time": 0.008895397186279297,
+        "output": "Test T0000011 not found",
+        "status": "fail"
+      },
+      {
+        "success": true,
+        "test_name": "DCMM - Full CRUD Operations",
+        "execution_time": 0.04107165336608887,
+        "output": "CRUD operations: 11/11 successful (100.0% success rate)",
+        "status": "pass"
+      },
+      {
+        "success": false,
+        "test_name": "TMM - Test Execution and Logging",
+        "execution_time": 0.005600929260253906,
+        "output": "Test T0000013 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "EMM - Error Code Generation & Logging",
+        "execution_time": 0.0708305835723877,
+        "output": "Test execution failed: unsupported operand type(s) for +: 'int' and 'NoneType'",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "MSM - System Monitoring Report",
+        "execution_time": 0.002352476119995117,
+        "output": "Test T0000015 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "MSM - Token Calculation",
+        "execution_time": 0.005434989929199219,
+        "output": "Test T0000016 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "SMSM - System Message Injection",
+        "execution_time": 0.002084016799926758,
+        "output": "Test T0000017 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "SMCM - API Model Change",
+        "execution_time": 0.010704278945922852,
+        "output": "Test T0000018 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "JFAIM - Handoff to JFA",
+        "execution_time": 0.0185089111328125,
+        "output": "Test T0000019 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "OCMIM - Handoff to OCM",
+        "execution_time": 0.0036797523498535156,
+        "output": "Test T0000020 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "ECM - CCU Command Reception",
+        "execution_time": 0.00341033935546875,
+        "output": "Test T0000021 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "RLM - Retry Mechanism on Failure",
+        "execution_time": 0.0038657188415527344,
+        "output": "Test T0000027 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "FAIM - API Endpoint Verification",
+        "execution_time": 0.0037033557891845703,
+        "output": "Test T0000028 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "BTM - Automated Cleanup Task",
+        "execution_time": 0.2946205139160156,
+        "output": "Test T0000029 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "EMM - Error Code Auto-Generation",
+        "execution_time": 0.007419586181640625,
+        "output": "Test T0000030 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "ECM - Dynamic Rate Limit Update",
+        "execution_time": 0.002917051315307617,
+        "output": "Test T0000031 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "ECM - Module Reset Command",
+        "execution_time": 0.012240409851074219,
+        "output": "Test T0000032 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "ECM - Remote DB Query",
+        "execution_time": 0.0034744739532470703,
+        "output": "Test T0000033 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "Human Interaction Benchmark",
+        "execution_time": 0.002810239791870117,
+        "output": "Test T0000040 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "FDM - File Detection Module",
+        "execution_time": 0.0028617382049560547,
+        "output": "Test T0000041 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "FBWM - File-based Workflow Module",
+        "execution_time": 0.006705760955810547,
+        "output": "Test T0000042 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "PRM - Priority Routing Module",
+        "execution_time": 0.007094860076904297,
+        "output": "Test T0000043 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "FOM - File Output Module",
+        "execution_time": 0.006397724151611328,
+        "output": "Test T0000044 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "BTM - Background Tasks Module Comprehensive",
+        "execution_time": 0.0024983882904052734,
+        "output": "Test T0000045 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "FAIM - FastAPI Integration Module Comprehensive",
+        "execution_time": 0.0030558109283447266,
+        "output": "Test T0000046 not found",
+        "status": "fail"
+      }
+    ]
+  },
+  "integration_tests": {
+    "test_type": "integration",
+    "total_tests": 11,
+    "passed_tests": 0,
+    "failed_tests": 11,
+    "success_rate": 0.0,
+    "total_execution_time": 0.08378458023071289,
+    "results": [
+      {
+        "success": false,
+        "test_name": "Workflow: Standard Successful Request",
+        "execution_time": 0.002309560775756836,
+        "output": "Test T0000022 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "Workflow: JFA Template Fulfillment",
+        "execution_time": 0.0036916732788085938,
+        "output": "Test T0000023 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "Workflow: Error Handling & Recovery",
+        "execution_time": 0.002305746078491211,
+        "output": "Test T0000024 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "Workflow: CCU Remote Control - API Key Change",
+        "execution_time": 0.0026357173919677734,
+        "output": "Test T0000025 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "Workflow: CCU Remote Control - Test Execution",
+        "execution_time": 0.002657651901245117,
+        "output": "Test T0000026 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "Workflow: High-Load Stress Test",
+        "execution_time": 0.0023946762084960938,
+        "output": "Test T0000034 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "Workflow: Mid-Conversation Model Switch",
+        "execution_time": 0.002424001693725586,
+        "output": "Test T0000035 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "Workflow: Mid-Conversation System Message Injection",
+        "execution_time": 0.002256631851196289,
+        "output": "Test T0000036 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "Workflow: End-to-End Failure, Retry, and Reporting",
+        "execution_time": 0.0022957324981689453,
+        "output": "Test T0000037 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "Workflow: Complex CCU Remote Control",
+        "execution_time": 0.0023577213287353516,
+        "output": "Test T0000038 not found",
+        "status": "fail"
+      },
+      {
+        "success": false,
+        "test_name": "Workflow: Concurrent Request Integrity",
+        "execution_time": 0.002336740493774414,
+        "output": "Test T0000039 not found",
+        "status": "fail"
+      }
+    ]
+  },
+  "execution_time": 2.268658399581909
+}

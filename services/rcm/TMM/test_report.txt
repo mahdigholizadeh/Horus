@@ -1,0 +1,199 @@
+================================================================================
+COMPREHENSIVE TEST REPORT
+================================================================================
+Generated: 2025-07-08 07:59:01
+
+OVERALL SUMMARY
+----------------------------------------
+Total Tests: 46
+Passed: 6
+Failed: 40
+Success Rate: 13.04%
+Total Execution Time: 2.27 seconds
+
+UNIT TESTS SUMMARY
+----------------------------------------
+Total: 35
+Passed: 6
+Failed: 29
+Success Rate: 17.14%
+Execution Time: 2.18 seconds
+
+INTEGRATION TESTS SUMMARY
+----------------------------------------
+Total: 11
+Passed: 0
+Failed: 11
+Success Rate: 0.00%
+Execution Time: 0.08 seconds
+
+FAILED TESTS DETAILS
+----------------------------------------
+Test: T0000004 - AACM - Successful Async API Call
+Error: Test execution failed: 'coroutine' object does not support the asynchronous context manager protocol
+Execution Time: 0.23 seconds
+
+Test: T0000007 - MMM & DRM - Memory Spill-to-Disk & Restore
+Error: Test execution failed: 'MemoryManagementModule' object has no attribute 'spill_to_disk'
+Execution Time: 0.02 seconds
+
+Test: T0000008 - BAAIM - Default & Override API Usage
+Error: Test T0000008 not found
+Execution Time: 0.01 seconds
+
+Test: T0000009 - AAAIM - Default & Override Agent Usage
+Error: Test T0000009 not found
+Execution Time: 0.01 seconds
+
+Test: T0000010 - SAAIM - Special API Call
+Error: Test T0000010 not found
+Execution Time: 0.01 seconds
+
+Test: T0000011 - SODVM - JSON Verification
+Error: Test T0000011 not found
+Execution Time: 0.01 seconds
+
+Test: T0000013 - TMM - Test Execution and Logging
+Error: Test T0000013 not found
+Execution Time: 0.01 seconds
+
+Test: T0000014 - EMM - Error Code Generation & Logging
+Error: Test execution failed: unsupported operand type(s) for +: 'int' and 'NoneType'
+Execution Time: 0.07 seconds
+
+Test: T0000015 - MSM - System Monitoring Report
+Error: Test T0000015 not found
+Execution Time: 0.00 seconds
+
+Test: T0000016 - MSM - Token Calculation
+Error: Test T0000016 not found
+Execution Time: 0.01 seconds
+
+Test: T0000017 - SMSM - System Message Injection
+Error: Test T0000017 not found
+Execution Time: 0.00 seconds
+
+Test: T0000018 - SMCM - API Model Change
+Error: Test T0000018 not found
+Execution Time: 0.01 seconds
+
+Test: T0000019 - JFAIM - Handoff to JFA
+Error: Test T0000019 not found
+Execution Time: 0.02 seconds
+
+Test: T0000020 - OCMIM - Handoff to OCM
+Error: Test T0000020 not found
+Execution Time: 0.00 seconds
+
+Test: T0000021 - ECM - CCU Command Reception
+Error: Test T0000021 not found
+Execution Time: 0.00 seconds
+
+Test: T0000027 - RLM - Retry Mechanism on Failure
+Error: Test T0000027 not found
+Execution Time: 0.00 seconds
+
+Test: T0000028 - FAIM - API Endpoint Verification
+Error: Test T0000028 not found
+Execution Time: 0.00 seconds
+
+Test: T0000029 - BTM - Automated Cleanup Task
+Error: Test T0000029 not found
+Execution Time: 0.29 seconds
+
+Test: T0000030 - EMM - Error Code Auto-Generation
+Error: Test T0000030 not found
+Execution Time: 0.01 seconds
+
+Test: T0000031 - ECM - Dynamic Rate Limit Update
+Error: Test T0000031 not found
+Execution Time: 0.00 seconds
+
+Test: T0000032 - ECM - Module Reset Command
+Error: Test T0000032 not found
+Execution Time: 0.01 seconds
+
+Test: T0000033 - ECM - Remote DB Query
+Error: Test T0000033 not found
+Execution Time: 0.00 seconds
+
+Test: T0000040 - Human Interaction Benchmark
+Error: Test T0000040 not found
+Execution Time: 0.00 seconds
+
+Test: T0000041 - FDM - File Detection Module
+Error: Test T0000041 not found
+Execution Time: 0.00 seconds
+
+Test: T0000042 - FBWM - File-based Workflow Module
+Error: Test T0000042 not found
+Execution Time: 0.01 seconds
+
+Test: T0000043 - PRM - Priority Routing Module
+Error: Test T0000043 not found
+Execution Time: 0.01 seconds
+
+Test: T0000044 - FOM - File Output Module
+Error: Test T0000044 not found
+Execution Time: 0.01 seconds
+
+Test: T0000045 - BTM - Background Tasks Module Comprehensive
+Error: Test T0000045 not found
+Execution Time: 0.00 seconds
+
+Test: T0000046 - FAIM - FastAPI Integration Module Comprehensive
+Error: Test T0000046 not found
+Execution Time: 0.00 seconds
+
+Test: T0000022 - Workflow: Standard Successful Request
+Error: Test T0000022 not found
+Execution Time: 0.00 seconds
+
+Test: T0000023 - Workflow: JFA Template Fulfillment
+Error: Test T0000023 not found
+Execution Time: 0.00 seconds
+
+Test: T0000024 - Workflow: Error Handling & Recovery
+Error: Test T0000024 not found
+Execution Time: 0.00 seconds
+
+Test: T0000025 - Workflow: CCU Remote Control - API Key Change
+Error: Test T0000025 not found
+Execution Time: 0.00 seconds
+
+Test: T0000026 - Workflow: CCU Remote Control - Test Execution
+Error: Test T0000026 not found
+Execution Time: 0.00 seconds
+
+Test: T0000034 - Workflow: High-Load Stress Test
+Error: Test T0000034 not found
+Execution Time: 0.00 seconds
+
+Test: T0000035 - Workflow: Mid-Conversation Model Switch
+Error: Test T0000035 not found
+Execution Time: 0.00 seconds
+
+Test: T0000036 - Workflow: Mid-Conversation System Message Injection
+Error: Test T0000036 not found
+Execution Time: 0.00 seconds
+
+Test: T0000037 - Workflow: End-to-End Failure, Retry, and Reporting
+Error: Test T0000037 not found
+Execution Time: 0.00 seconds
+
+Test: T0000038 - Workflow: Complex CCU Remote Control
+Error: Test T0000038 not found
+Execution Time: 0.00 seconds
+
+Test: T0000039 - Workflow: Concurrent Request Integrity
+Error: Test T0000039 not found
+Execution Time: 0.00 seconds
+
+DATABASE STATISTICS
+----------------------------------------
+Total Test Records: 0
+Database Size: Unknown
+
+================================================================================
+END OF REPORT
+================================================================================

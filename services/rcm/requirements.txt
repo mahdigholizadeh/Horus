@@ -1,0 +1,9 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+python-multipart==0.0.6
+aiofiles==23.2.1
+psutil==5.9.6
+msgpack==1.0.7
+lz4==4.3.2
+aiohttp==3.9.1
