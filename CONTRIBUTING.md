@@ -38,9 +38,6 @@ Include:
 - Expected vs actual behavior
 - Relevant logs (redact API keys and paths with personal data)
 
-## Security
-
-Report vulnerabilities privately — see [SECURITY.md](SECURITY.md). Do not open public issues for undisclosed security problems.
 
 ## License
 
