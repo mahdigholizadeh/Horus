@@ -4,7 +4,6 @@
 
 Horus sits between client applications and external AI APIs. It validates ingress, preprocesses text, calls AI providers asynchronously, routes tasks through a proxy pipeline, and delivers formatted responses — all supervised by a central control plane.
 
-[![CI](https://github.com/mahdigholizadeh/horus/actions/workflows/ci.yml/badge.svg)](https://github.com/mahdigholizadeh/horus/actions/workflows/ci.yml)
 
 > **Release:** `v0.1.0-alpha` — see [CHANGELOG.md](./CHANGELOG.md)
 
